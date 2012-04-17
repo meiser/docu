@@ -100,7 +100,7 @@ Der Nutzer muss nun nur noch das Programm `Cimco Edit V6` starten und fuer den A
 
 ## Kabel RS-232 25 pol. auf 9 pol.
 
-Das Kabel zur Verbindung von `Charmilles Robofil 510` mit dem RS232 over Ethernet-Server benoetigt einen RS 232 - Adapter von DB9 nach DB25
+Das Kabel zur Verbindung von `Charmilles Robofil 510` mit dem RS232 over Ethernet-Server benoetigt einen RS 232 - Adapter von DB9 nach DB25.
 Je nach Schnittstellenkonfiguration der `Charmilles Robofil 510` (Cable switched oder Cable normal, Jumper Settings im Geraet) gibt sich folgende Belegung.
 
 ### Cable normal ###
