@@ -39,14 +39,14 @@ Die Bedienung der Software ist intuitiv. Folgend werden nur einige wichtige Konf
 * Im Reiter Server Manager wird die Konfiguration des Servers (vor allem Netzwerkkonfiguration und Verbindungsparameter am physischen COM-Port des Servers) eingestellt.
 * Im Reiter Port Mapping wird die Verknuepfung zwischen virtullem COM Port und Server eingestellt (gilt nur bei Verwendung des originalen Treibers `SerRedir.exe`)
 
-COM Porteinstellungen am Anschluss des Servers:
+## COM Porteinstellungen am Anschluss des Servers:
 
-* Baudrate 9600
-* Datenbits 7
-* Stopbits 2
-* Paritaet gerade
-* Flusskontrolle Xon/Xoff
-* Interface RS232
+* Baudrate `9600`
+* Datenbits `7`
+* Stopbits `2`
+* Paritaet `gerade`
+* Flusskontrolle `Xon/Xoff`
+* Interface `RS232`
 
 ## Konfiguration Charmilles Robofil 510
 
