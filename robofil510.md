@@ -52,110 +52,48 @@ Die Bedienung der Software ist intuitiv. Folgend werden nur einige wichtige Konf
 
 Im Geraet muessen folgende Einstellungen vorgenommen werden:
 
-Spalte DNC:
+### Spalte DNC
 
-* Kanal 1
+* Channel (Kanal) `1`
+* Baud `9600`
+* Protocol `6`
+
+### Spalte PP
+
 * Baudrate 9600
-* Protokol 7 (mit Parität)
-
-Spalte PP:
-
-*
-*
-
-Dieser Aufruf erzeugt im Hauptordner des Programms die Datei `last`, die die Messdaten der Rhewa 82basic beinhaltet.
-Je nachdem ob mit Tara gearbeitet wurde koennen die entstehenden Dateien wie folgt aussehen:
-
-### COM-Port-Ausgabe ohne Tara
-
-	Nr.        508
-	Bereich                                1
-	Brutto                          439,0 kg
-	----------------------------------------
+* Protokoll `6`
 
 
-### COM-Port-Ausgabe bei Verwendung Tara
+## Nutzung vom com0com und com2tcp
 
-	Nr.        508
-	Bereich                                1
-	Brutto                          439,0 kg
-	Tara                            164,5 kg
-	Netto                           274,5 kg
-	----------------------------------------
+Das OpenSource-Projekt `com0com` ermoeglicht die Virtualisierung von COM-Ports und die Erstellung von virtuellen COM-Port-Paaren, die gegenseitig untereinander kommunizieren.
+Alle Daten des einen COM-Port-Partners werden automatisch an den anderen COM-Port weitergeleitet und umgekehrt.
 
+Zur Benutzung von `com0com` und `com2tcp` muessen folgende Schritte vollzogen werden:
 
-Die Werte der letzten Messung werden standardmaessig in der Datei `last` gespeichert. Wird beim Start des Programms das Kommandozeilenargument `--name` bzw. `n` verwendet. wird die Datei im Ordner `data/{name}` angelegt.
+1. Installation von `com0com` und Erzeugung eines virtuellen COM Port-Paares z.B. `COM9` und `COM10`
+2. Start der Windows-Konsole (`cmd`)
+3. Ausfuehrung des com2tcp-Befehls nach folgendem Schema (eckige Klammern symbolisieren Platzhalter):
 
-
-## Notwendige Einstellungen an der Waage
-
-Zur Benutzung des Programms `zwfwaage.exe` muessen folgende Einstellungen an der Konfiguration der Waage vorgenommen werden:
-
-* COM-Port Einstellungen des Programms entsprechend der Geraetekonfiguration unter `G.KONFI` -> `INTERFACE` -> ... einstellen
-* Handshake fuer COM-Port-Verbindung auf `none` setzen (im Menue `G.KONFI` -> `INTERFACE` -> `HANDSH`)
-* Format des Drucks auf `UNIVER` (Universell) stellen (im Menue `G.KONFI` -> `DRUCK` -> `DRUCK.EI` -> `FORMAT`)
-* Anzahl der Datensatzwiederholungen auf `1` setzen (im Menue `G.KONFI` -> `DRUCK` -> `DRUCK.EI` -> `ANZAHL`)
-* EDV-Kommunikation des Geraetes auf `aktiv` setzen (im Menue `G.KONFI` -> `DRUCK` -> `EDV.KOM` -> `AKTIV`)
-
-## Anforderungen
-
-* Rechner mit verfuegbarem seriellen COM-Port
-* Linux ab Kernel 2.6.x, Windows XP, Windows Vista, Windows 7, Mac OSX 10.5.x oder hoeher
-* Bearbeitung der Projektdatei mit Codeblocks (IDE) und Kompilierung mit der C++ Boost Bibliothek
-
-## Kommandozeilenargumente
-
-Das Programm `zwfwaage.exe` kann mit folgenden Startparametern ausgefuehrt werden:
-
-* `--help, --h` Listet alle zulaessigen Kommandozeilenargumente und ihre Funktionsbeschreibung auf
-* `--name, --n` Angabe des Dateinamens, in dem die Daten der Messung gespeichert werden.
-* `--console, --c` Startet des Programm im interaktiven Konsolenmodus
-* `--p, --p` Angabe des COM-Ports z.B. --p COM1 oder --p /dev/ttyS0, Standard ist COM1
-* `--baudrate, --b` Angabe der Uebertragungsgeschwindigkeit des COM-Ports, Standard ist 9600
-* `--file, --f` Angabe des Pfades zu einer Konfigurationsdatei
-
-## Interaktiver Konsolenmodus
-
-Durch den Start des Programms im interaktiven Konsolenmodus kann ueber spezifische COM-Port-Befehle eine direkte Kommunikation mit der `Rhewa 82basic` hergestellt werden.
-Die Rueckantwort des Geraetes wird direkt in der Konsole ausgegeben.
-
-Momentan stehen folgende Befehle zur Verfuegung:
-
-* `<FP>` Gibt die aktuellen Messwerte der Waage in der Konsole aus
-* `exit` Beendigung des Programms
-
-##Konfigurationsoptionen
-
-Zur Konfiguration der COM-Port Verbindungsdaten bietet `zwfwaage.exe` verschiedene Moeglichkeiten:
-
-
-### Erstellung einer Autokonfigurationsdatei
-
-Die Konfigurationsdatei muss den Namen `config` haben und sich im gleichen Ordner wie die Datei `zwfwaage.exe` befinden. Der Aufbau der Datei sieht dabei folgende Struktur vor:
+	com2tcp.exe \\.\<COM-Port> <IP-Adresse TCP-Server> <Port TCP-Server>
 	
-	port:COM3
-	baudrate:115200
-
-Die Reihenfolge von Port- und Baudratenangabe kann beliebig vertauscht werden.
+	com2tcp.exe \\.\COM10 192.168.1.2 1235
 
 
-### Verwendung des Kommandozeilenarguments `--f`
+Die wichtigsten Verbindungsparameter von `com2tcp.exe` sind u.a.:
 
-Mit Hilfe des Kommandozeilenarguments `--f` kann ein individueller Pfad zu einer Konfigurationsdatei angegeben werden (siehe Abschnitt Kommandozeilenargumente).
-Die Struktur der Konfigurationsdatei enspricht dabei der Struktur der Autokonfigurationsdatei.
+* `--baud, --b` Baudrate
+* `--data, --d` Datenrate
+* `--parity, --p` Paritaet
+* `--stop, --s` Anzahl der Stopbits
 
-### Verwendung der Kommandozeilenargumente `--p` und `--b`
+Der vollstaendige Kommandoaufruf fuer die korrekte Ansteuerung des `Charmilles Robofil 510` ist somit:
 
-Mit Hilfe der Kommandozeilenargumente `--p` und `--b` koennen die Verbindungsparameter des Programms direkt beim Aufruf angegeben werden (siehe Abschnitt Kommandozeilenargumente).
+	com2tcp.exe --baud 9600 --data 7 --stop 2 --parity even --ignore-dsr \\.\COM10 192.168.1.2 1235
+	
 
+Solang dieses Programm aktiv ist werden alle Daten des COM-Port `COM10` an den Roline Serial over Ethernet Device 
+Server mit der angegebenen Netzwerkadresse und Port geschickt.
 
+Der Nutzer muss nun nur noch das Programm `Cimco Edit V6` starten und fuer den Austausch von CNC-Dateien (Senden und Empfangen) mit der `Charmilles Robofil 510` COM-Port `COM9` auswaehlen.
 
-### ANMERKUNGEN
-
-Wenn die Kommandozeilenargumente `--p` oder `--b` nicht verwendet werden bezieht das Programm die Verbindungsdaten aus der Konfigurationsdatei. Dabei hat die Konfigurationsdatei, die mit dem Kommandozeilenargument `--f` angegeben wurde Vorrang vor der Autokonfigurationsdatei im Hauptornder des Programms.
-Existiert keine Autokonfigurationsdatei greifen die Standardeinstellungen (`COM1` mit einer Baudrate von `9600`)
-
-
-## Kompilierung
-
-Das `zwfwaage.exe` Repository beinhaltet vorkompilierte Versionen der Anwendungen im bin-Ordner. Dort kann zwischen einer Debug und Release-Version entschieden werden.
