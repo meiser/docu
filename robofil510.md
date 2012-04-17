@@ -37,12 +37,31 @@ Die Bedienung der Software ist intuitiv. Folgend werden nur einige wichtige Konf
 
 * Im Reiter Server Manager werden alle im Netzwerk befindlichen Roline Geraete angezeigt. Wird das Geraet nicht gefunden kann es hilfreich sein, die IP-Adresse bei der Suche fest einzugeben.
 * Im Reiter Server Manager wird die Konfiguration des Servers (vor allem Netzwerkkonfiguration und Verbindungsparameter am physischen COM-Port des Servers) eingestellt.
-* Im Reiter Port Mapping wird die Verknuepfung zwischen virtullem COM Port und Server eignestellt (gilt nur bei Verwendung des originalen Treibers `SerRedir.exe`)
+* Im Reiter Port Mapping wird die Verknuepfung zwischen virtullem COM Port und Server eingestellt (gilt nur bei Verwendung des originalen Treibers `SerRedir.exe`)
 
-## Konfiguration
-Ein Beispielaufruf des Programms kann wie folgt aussehen:
+COM Porteinstellungen am Anschluss des Servers:
 
-	zwfwaage.exe
+* Baudrate 9600
+* Datenbits 7
+* Stopbits 2
+* Paritaet gerade
+* Flusskontrolle Xon/Xoff
+* Interface RS232
+
+## Konfiguration Charmilles Robofil 510
+
+Im Geraet muessen folgende Einstellungen vorgenommen werden:
+
+Spalte DNC:
+
+* Kanal 1
+* Baudrate 9600
+* Protokol 7 (mit Parität)
+
+Spalte PP:
+
+*
+*
 
 Dieser Aufruf erzeugt im Hauptordner des Programms die Datei `last`, die die Messdaten der Rhewa 82basic beinhaltet.
 Je nachdem ob mit Tara gearbeitet wurde koennen die entstehenden Dateien wie folgt aussehen:
