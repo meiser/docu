@@ -20,15 +20,26 @@ Die folgende Anleitung beinhaltet alle wichtigen Informationen zur Einrichtung d
 
 Die fuer den Roline Serial over Ethernet Device Server benoetigten Programme und Treiber befinden sich auf der mitgelieferten Treiber CD im Ordner `SLAN`.
 Zu naechst muessen folgende Programme in der exakten Reihenfolge installiert werden:
+
 * `PortSetup.exe` - installiert die Treiber fuer den virtuellen COM Port und das Konfigurationstool `SLANUtility.exe` (Konfiguration des Servers)
 * Installation des `SerialRedirector` unter `SLAN\WIN2KXP\SerialRedirector`
 * Anschließend Neustart des Computers
 * AUF AUSREICHENDE ADMINRECHTE ACHTEN!!!!!!!
 
-Das Programm `zwfwaage.exe` kann einfach per Mausklick oder über die Kommandozeile gestartet werden. Zur Nutzung mit der Baan-Session `tibde9115m900` muss der GESAMTE Inhalt des Ordners `waage\bin\Release` bzw. `waage\bin\Debug` nach `C:\waage` kopiert werden.
+Der Inhalt der Treiber CD ist auch im [Downloadbereich](http://dl.rotronic.ch/Web%20Client/ListDir.htm "SECOMP DOWNLOAD BEREICH") des Roline-Partners `SECOMP` verfuegbar. Es wird kein Passwort benoetigt.
+Die Ordnerstruktur entspricht der Artikelnummer des Geraetes (hier 15060015)
 
-## Nutzung des Programms
 
+## Konfiguration Server
+
+Der Roline Serial over Ethernet Device Server kann mit Hilfe des Konfigurationstool `SLANUtility.exe` konfortabel eingestellt werden.
+Die Bedienung der Software ist intuitiv. Folgend werden nur einige wichtige Konfigurationsschritte festgehalten:
+
+* Im Reiter Server Manager werden alle im Netzwerk befindlichen Roline Geraete angezeigt. Wird das Geraet nicht gefunden kann es hilfreich sein, die IP-Adresse bei der Suche fest einzugeben.
+* Im Reiter Server Manager wird die Konfiguration des Servers (vor allem Netzwerkkonfiguration und Verbindungsparameter am physischen COM-Port des Servers) eingestellt.
+* Im Reiter Port Mapping wird die Verknuepfung zwischen virtullem COM Port und Server eignestellt (gilt nur bei Verwendung des originalen Treibers `SerRedir.exe`)
+
+## Konfiguration
 Ein Beispielaufruf des Programms kann wie folgt aussehen:
 
 	zwfwaage.exe
