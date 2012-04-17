@@ -26,7 +26,7 @@ Zu naechst muessen folgende Programme in der exakten Reihenfolge installiert wer
 * Anschließend Neustart des Computers
 * AUF AUSREICHENDE ADMINRECHTE ACHTEN!!!!!!!
 
-Der Inhalt der Treiber CD ist auch im [Downloadbereich](http://dl.rotronic.ch/Web%20Client/ListDir.htm "SECOMP DOWNLOAD BEREICH") des Roline-Partners `SECOMP` verfuegbar. Es wird kein Passwort benoetigt.
+Der Inhalt der Treiber CD ist auch im [Downloadbereich](http://dl.rotronic.ch/?user=anonymous "SECOMP DOWNLOAD BEREICH") des Roline-Partners `SECOMP` verfuegbar. Es wird kein Passwort benoetigt.
 Die Ordnerstruktur entspricht der Artikelnummer des Geraetes (hier 15060015)
 
 
