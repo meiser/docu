@@ -13,16 +13,13 @@ Die folgende Anleitung beinhaltet alle wichtigen Informationen zur Einrichtung d
 ## Verwendete Programme, Bibliotheken usw.
 [Cimco Edit V6 Professional](http://http://www.cimco.com/ "Informationen zu Cimco Edit V6 Professional")
 * [com0com](http://http://com0com.sourceforge.net/ "Erstellt virtuelle COM-Port-Paare")
-* [com0com](http://http://com0com.sourceforge.net/ "Erstellt virtuelle COM-Port-Paare") und
-* [com2tcp](http://sourceforge.net/projects/com0com/files/ "COM Port zu TCP Redirector") oder
+* [com0com](http://http://com0com.sourceforge.net/ "Erstellt virtuelle COM-Port-Paare")
+* [com2tcp](http://sourceforge.net/projects/com0com/files/ "COM Port zu TCP Redirector")
 * Com Port Redirector
-
 
 ## Softwaredownloads
 
 Die fuer den Roline Serial over Ethernet Device Server benoetigten
-
-## Installationsschritte
 
 Das Programm `zwfwaage.exe` kann einfach per Mausklick oder über die Kommandozeile gestartet werden. Zur Nutzung mit der Baan-Session `tibde9115m900` muss der GESAMTE Inhalt des Ordners `waage\bin\Release` bzw. `waage\bin\Debug` nach `C:\waage` kopiert werden.
 
