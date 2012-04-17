@@ -1,17 +1,14 @@
-# __Netzwerkansteuerung für die Erodiermaschine CHARMILLES
-	ROBOFIL 510__
+# __Netzwerkansteuerung für die Erodiermaschine CHARMILLES ROBOFIL 510__
 
 ## Idee
 
-Das Erodiermaschine CHARMILLES ROBOFIL 510 verfuegt standardmaessig nur ueber eine serielle Schnittstelle (RS-232/RS-422). Mit Hilfe eines RS232 over Ethernet-Servers kann das Geraet im Netzwerk verfuegbar gemacht werden.
+Die Erodiermaschine `CHARMILLES ROBOFIL 510` verfuegt lediglich ueber eine serielle Schnittstelle (RS-232/RS-422), die einen Austausch zwischen Maschine und PC gewaehrleistet. Mit Hilfe eines RS232 over Ethernet-Servers soll das Geraet zusaetzlich im Netzwerk zur Verfuegung gestellt werden.
+Die folgende Anleitung beinhaltet alle wichtigen Informationen zur Einrichtung des RS232 over Ethernet-Servers und der Softwarekonfiguration auf den Clientrechnern.
 
 ## Verwendete Hardware
-* [Roline Serial over Ethernet Device Server Port 1x RS232 Artikelnummer 15.06.0015](https://www.secomp.de "Secomp Computer Products")
+* [Roline Serial over Ethernet Device Server] 1x Port RS-232 Artikelnummer 15.06.0015 (https://www.secomp.de "Secomp Computer Products")
 * Netzwerkkabel Cat 5 Kabel
-* Datenkabel RS-232 9 pol. female auf RS-232 25 pol. male nicht gedreht:
-**	PIN 2-> PIN2
-**	PIN 3-> PIN3
-**	PIN 7-> PIN7
+* Datenkabel RS-232 9 pol. female auf RS-232 25 pol. male nicht gedreht
 
 ## Verwendete Programme, Bibliotheken usw.
 [Cimco Edit V6 Professional](http://http://www.cimco.com/ "Informationen zu Cimco Edit V6 Professional")
