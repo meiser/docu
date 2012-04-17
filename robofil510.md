@@ -12,7 +12,7 @@ Die folgende Anleitung beinhaltet alle wichtigen Informationen zur Einrichtung d
 
 ## Verwendete Programme, Bibliotheken usw.
 * [Cimco Edit V6 Professional](http://http://www.cimco.com/ "Informationen zu Cimco Edit V6 Professional") - Datenuebertragung zum PC (loest altes Kommandozeilentool ab)
-* Com Port Redirector - Original Software, erstellt virtuellen COM Port und verknuepft diesen mit dem RS232 over Ethernet-Server, bis Windows XP SP3
+* [SerRedir.exe] - Original Software von CD, erstellt virtuellen COM Port und verknuepft diesen mit dem RS232 over Ethernet-Server, bis Windows XP SP3
 * [com0com](http://com0com.sourceforge.net/ "Erstellt virtuelle COM-Port-Paare") - Erzeugt virtuelle COM Port Paare, Windows 7 Unterstuetzung, Opensource
 * [com2tcp](http://sourceforge.net/projects/com0com/files/ "COM Port zu TCP Redirector") - Alternative zu COM Port Redirector, benoetigt com2com )
 
